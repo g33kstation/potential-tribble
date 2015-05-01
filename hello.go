@@ -26,6 +26,9 @@ func beyondHello(){
 	// a function returning 2 values
 	sum, prod := learnMultiple(x, y)
 	fmt.Println("sum:", sum, "prod:", prod)
+
+	// another function call
+	learnTypes()
 }
 
 // arguments x, y of type integers
@@ -34,4 +37,26 @@ func learnMultiple(x, y int) (sum, prod int) {
 	// two values returned
 	return x+y, x*y
 
+}
+
+func learnTypes(){
+	// string inference
+	str := "Learn go"
+	s2 := `string with
+newline`
+	// go source code use utf8 charset
+	// rune type, for unicode char
+	g := 'Σ'
+
+	// float
+	f := 3.14195
+	// complex128 type, considered as float64 by compiler
+	c := 3 + 4i
+	// u declared as unsigned int
+	var u uint = 7
+	var pi float32 = 22. / 7
+
+	// declared & not used variables are errors
+	// to ignore those unused values
+	_, _, _, _, _, _, _ = str, s2, g, f, c, u, pi
 }
