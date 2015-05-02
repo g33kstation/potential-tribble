@@ -56,7 +56,27 @@ newline`
 	var u uint = 7
 	var pi float32 = 22. / 7
 
+	// byte is an alias for uint8
+	n := byte('\n')
+
+	// array are size fixed
+	var a4 [4]int // array size 4, int items 0, 0, 0, 0
+	a3 := [...]int{3, 1, 5} // array size 3, int items 3, 1, 5
+
+	// slices are size not fixed
+	s3 := []int{4, 5, 9} // 3 ints slice
+	s4 := make([]int, 4) // 4 ints slice initialized with zeros
+	var d2 [][]float64
+	bs := []byte("a slice")
+
+	// add values to slice
+	s3 = append(s3, 4, 5, 6)
+	s3 = append(s3, []int{7,8,9}...)
+	fmt.Println(s3)
+
+
+
 	// declared & not used variables are errors
 	// to ignore those unused values
-	_, _, _, _, _, _, _ = str, s2, g, f, c, u, pi
+	_, _, _, _, _, _, _, _, _, _, _, _, _ = str, s2, g, f, c, u, pi, n, a3, a4, bs, d2, s4
 }
