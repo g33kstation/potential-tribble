@@ -83,7 +83,23 @@ newline`
 	// to ignore those unused values
 	_, _, _, _, _, _, _, _, _, _, _, _, _ = str, s2, g, f, c, u, pi, n, a3, a4, bs, d2, s4
 	learnFlowControl()
+
+	x := 5
+	// closure?! lambda function?! anonymous function?!
+	xBig := func() bool{
+		return x > 10
+	}
+	fmt.Println("xBig: ", xBig())
+	x = 12
+	fmt.Println("xBig: ", xBig())
+
+	// function as argument to another function
+	fmt.Println("bim: ", func(a, b int) int { return (a + b) * 2}(10,2))
+
+
+
 }
+
 
 func learnFlowControl() {
 	if true {
