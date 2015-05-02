@@ -96,10 +96,18 @@ newline`
 	// function as argument to another function
 	fmt.Println("bim: ", func(a, b int) int { return (a + b) * 2}(10,2))
 
+	learnDefer()
 
 
 }
 
+func learnDefer() (ok bool) {
+	defer fmt.Println("deferred statements execute in reverse (LIFO) order.")
+	defer fmt.Println("\nThis line is being printed first because")
+	// Defer is commonly used to close a file, so the function closing the
+	// file stays close to the function opening the file.
+	return true
+}
 
 func learnFlowControl() {
 	if true {
