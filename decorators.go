@@ -12,8 +12,23 @@ func sentenceFactory(s string) func(b, a string) string {
 	}
 }
 
+
+func makeEvenGenerator() func() uint {
+	i := uint(0)
+	// i and func forms a closure
+	return func() (ret uint) {
+		ret = i
+		i += 2
+		return
+	}
+}
 func main() {
 	x := sentenceFactory("patrick")
 	// decorating x
 	fmt.Println(x("the awesome ", "the amazing"))
+
+	nextEven := makeEvenGenerator()
+	fmt.Println(nextEven())
+	fmt.Println(nextEven())
+	fmt.Println(nextEven())
 }
